@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" build-on-make="true" name="JFinal-ERP:war">
+    <output-path>$PROJECT_DIR$/out/artifacts/JFinal_ERP_war</output-path>
+    <root id="archive" name="JFinal-ERP_war.war">
+      <element id="artifact" artifact-name="JFinal-ERP:war exploded" />
+    </root>
+  </artifact>
+</component>
