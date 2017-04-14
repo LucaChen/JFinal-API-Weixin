@@ -7,6 +7,7 @@ import com.jfinal.config.JFinalConfig;
 import com.jfinal.config.Plugins;
 import com.jfinal.config.Routes;
 import com.jfinal.core.JFinal;
+import com.jfinal.kit.PathKit;
 import com.jfinal.kit.PropKit;
 import com.jfinal.plugin.activerecord.ActiveRecordPlugin;
 import com.jfinal.plugin.c3p0.C3p0Plugin;
@@ -27,6 +28,8 @@ public class MainConfig extends JFinalConfig {
 		me.setDevMode(true);
 		me.setEncoding("UTF-8");
 		me.setViewType(ViewType.JSP);
+		me.setBaseUploadPath(PathKit.getWebRootPath()+"/upload");
+		me.setBaseDownloadPath(PathKit.getWebRootPath()+"/upload");
 	    PropKit.use("config.properties");
 	}
 
@@ -50,21 +53,13 @@ public class MainConfig extends JFinalConfig {
 			arp.addMapping("user","userid", User.class);
 			me.add(c3p0Plugin);
 			me.add(arp);*/
-		C3p0Plugin cp = new C3p0Plugin("jdbc:mysql://localhost/equipmentmanger?characterEncoding=UTF-8&amp;useUnicode=true", "root", "123456");  
+		C3p0Plugin cp = new C3p0Plugin("jdbc:mysql://localhost/weixin?useOldAliasMetadataBehavior=true&characterEncoding=UTF-8&amp;useUnicode=true", "root", "123456");
 		me.add(cp);  
 		ActiveRecordPlugin arp = new ActiveRecordPlugin(cp); 
 		me.add(arp);  
 		arp.addMapping("user","userid" ,User.class);
-		arp.addMapping("requisition", "requisitionid",Requisition.class);
-		arp.addMapping("requisitiondetail", "id",Requisitiondetail.class);
-		arp.addMapping("equipment", "equipmentid",Equipment.class);
-		arp.addMapping("storage", "storageid",Storage.class);
-		arp.addMapping("warehouse", "wareHouseid",Warehouse.class);
-		arp.addMapping("stockin","stockinid",Stockin.class);
-		arp.addMapping("stockout","stockoutid", Stockout.class);
-		arp.addMapping("stockindetail","id",Stockindetail.class);
-		arp.addMapping("stockoutdetail","id", Stockoutdetail.class);
-		arp.addMapping("equipmenttype","equipmenttypeid",Equipmenttype.class);
+		arp.addMapping("event","eventid",Event.class);
+		arp.addMapping("customer","openid",Customer.class);
 	}
 
 	@Override

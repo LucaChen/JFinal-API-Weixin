@@ -30,11 +30,6 @@ public class BaseAPIController extends Controller {
         }*/
         return getAttr("user");
     }
-    protected User getUser(String userid){
-    	String sql = "SELECT * FROM user WHERE UserID=? ";
-        User nowUser = User.user.findFirst(sql,userid);
-        return nowUser;
-    }
 
     /**
      * 响应接口不存�?*
@@ -93,9 +88,9 @@ public class BaseAPIController extends Controller {
      * @param name
      * @return
      */
-    protected boolean methodType(String name) {
-        return getRequest().getMethod().equalsIgnoreCase(name);
-    }
+    //protected boolean methodType(String name) {
+    //    return getRequest().getMethod().equalsIgnoreCase(name);
+    //}
     
     /**
      * 判断参数值是否为�?

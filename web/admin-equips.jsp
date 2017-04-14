@@ -323,9 +323,7 @@
 
     <script>
        function sumbit() {
-           alert("ok");
-           $('#equipmenttypeid')[0].value=$("#select").val();
-           $('#from1').submit();
+
        }
         function getequipment(e) {
             $.getJSON("/getequipment?id="+e,function (data) {

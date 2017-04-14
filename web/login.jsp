@@ -13,7 +13,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>实验室器材管理系统</title>
+    <title>微信后台管理系统</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -52,7 +52,7 @@
                                     <input type="text"  class="form-control" name="user.userid" placeholder="Username" id="userid">
                                 </div>
                                 <div class="form-group">
-                                    <input type="password" class="form-control"  placeholder="Password" name="user.userpassword" id="password" >
+                                    <input type="password" class="form-control"  placeholder="Password" name="user.password" id="password" >
                                 </div>
                                 <div class="checkbox">
                                     <label>
