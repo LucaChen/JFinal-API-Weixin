@@ -19,6 +19,7 @@
     <link href="//cdn.bootcss.com/bootstrap/4.0.0-alpha.2/css/bootstrap.css" rel="stylesheet">
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
     <link href="//cdn.bootcss.com/bootstrap/4.0.0-alpha.2/css/bootstrap.css" rel="stylesheet">
+    <link href="./css/bootstrap-datetimepicker.min.css" rel="stylesheet" media="screen">
 
     <!-- MetisMenu CSS -->
     <link href="/bower_components/metisMenu/dist/metisMenu.min.css" rel="stylesheet">
@@ -59,7 +60,7 @@
 //                $('#select').append(item);
 //            })
 //        })
-
+        $('.form_date').datetimepicker('update');
        // $("input[name='seachers']").value=123;
     })
 
@@ -132,13 +133,13 @@
                     <div class="panel panel-default">
                         <div class="panel-heading"  style="height: 55px">
                             <div  id="1" style="float: left">
-                                <select class="form-control" id="select" style="width: 170px;margin-left: 40%" >
-                                    <option value = 1>全部订单</option>
-                                    <option value = 1>未处理</option>
-                                    <option value = 2>已处理</option>
-                                </select>
+                                <div class="controls input-append date form_date" data-date="" data-date-format="dd MM yyyy" data-link-field="dtp_input2" data-link-format="yyyy-mm-dd">
+                                    <input size="16" type="text" value="2017-05-15" id="datatime" readonly>
+                                    <span class="add-on"><i class="icon-remove"></i></span>
+                                    <span class="add-on"><i class="icon-th"></i></span>
+                                </div>
                             </div>
-                            <div  id="2"  style="float: right;margin-top: 5px" >
+                            <div  id="2"  style="float: right;margin-top: -3px" >
                                     <input type="text" class="input-medium search-query" name="seachers" id="seachers">
                                     <button type="submit" class="btn" id="seacher">Search</button>
                             </div>
@@ -219,6 +220,28 @@
 
     <!-- Custom Theme JavaScript -->
     <script src="/dist/js/sb-admin-2.js"></script>
+    <%--<script type="text/javascript" src="./jquery/jquery-1.8.3.min.js" charset="UTF-8"></script>--%>
+    <script type="text/javascript" src="./bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="./js/bootstrap-datetimepicker.js" charset="UTF-8"></script>
+    <script type="text/javascript" src="./js/locales/bootstrap-datetimepicker.zh-CN.js" charset="UTF-8"></script>
+    <script type="text/javascript">
+        $('.form_date').datetimepicker({
+            format:'yyyy-mm-dd',
+            language:  'zh-CN',
+            weekStart: 1,
+            todayBtn:  1,
+            autoclose: 1,
+            todayHighlight: 1,
+            startView: 2,
+            minView: 2,
+            forceParse: 0
+        });
+        $('.form_date').datetimepicker()
+            .on('changeDate', function(ev){
+                    alert($('#datatime').val());
+            });
+
+    </script>
 
     <!-- Page-Level Demo Scripts - Tables - Use for reference -->
     <script>

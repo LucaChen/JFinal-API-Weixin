@@ -13,6 +13,8 @@ public class APIRouter extends Routes {
         add("/api", CommonAPIController.class);*/
         //用户相关
         add("/api/account", AccountAPIController.class);
-        add("/file",FileAPIController.class);
+        add("/api/file",FileAPIController.class);
+        add("/api/getprofile",CommonAPIController.class);
+
     }
 }

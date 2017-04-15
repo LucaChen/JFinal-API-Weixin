@@ -12,7 +12,7 @@
 <!doctype html>
 <html>
 <body>
-<form action='/file/upload' method='post' enctype='multipart/form-data'>
+<form action='/api/file/uploadExcel' method='post' enctype='multipart/form-data'>
   <input type='file' name='file'>
   <input type="text" name="ordernumber">
   <input type="text" name="customerid">

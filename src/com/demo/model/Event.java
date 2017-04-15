@@ -11,7 +11,7 @@ public class Event extends Model<Event> {
     public static String CUSTOMERID = "customerid";
     public static String FILENAME = "filename";
     public static String CREATTIME = "creattime";
-    public static String EVENTTYPE = "eventtype";
+    public static String STATE = "state";
     public static String EVENT_ID ="eventid";
     public static final Event event = new Event();
 }

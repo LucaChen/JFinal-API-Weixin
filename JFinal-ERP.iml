@@ -12,7 +12,7 @@
       </configuration>
     </facet>
   </component>
-  <component name="NewModuleRootManager" inherit-compiler-output="false">
+  <component name="NewModuleRootManager">
     <output url="file://$MODULE_DIR$/web/WEB-INF/classes" />
     <output-test url="file://$MODULE_DIR$/web/WEB-INF/classes" />
     <exclude-output />
@@ -24,5 +24,7 @@
     <orderEntry type="library" name="c3p0-0.9.5.1" level="project" />
     <orderEntry type="library" name="cos" level="project" />
     <orderEntry type="library" name="jetty-server-8.1.8" level="project" />
+    <orderEntry type="library" name="poi-3.2-FINAL-20081019" level="project" />
+    <orderEntry type="library" name="WEB-INF" level="project" />
   </component>
 </module>

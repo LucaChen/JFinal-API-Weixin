@@ -1,6 +1,8 @@
 package com.demo.api;
 
 import com.demo.model.Customer;
+import com.demo.model.Order;
+import com.demo.util.ExcelKitUtils;
 import com.jfinal.core.Controller;
 import com.jfinal.kit.PathKit;
 import com.jfinal.plugin.activerecord.Db;
@@ -8,6 +10,8 @@ import com.jfinal.upload.UploadFile;
 import com.demo.bean.BaseResponse;
 import com.demo.model.Event;
 import com.demo.util.FileUtils;
+
+import java.util.List;
 
 /**
  * Created by Lucas on 2017/3/29.
@@ -52,5 +56,24 @@ public class FileAPIController extends Controller {
             renderFile(Db.findFirst("Select * from event where ordernumber = ?",orderNumber).getStr("filename"));
         }
 
+    }
+    public void uploadExcel() {
+        UploadFile uploadFile = getFile();//在磁盘上保存文件
+        String uploadPath = uploadFile.getUploadPath();//获取保存文件的文件夹
+        String fileName = uploadFile.getFileName();//获取保存文件的文件名
+        String filePath = uploadPath+"\\"+fileName;//保存文件的路径
+        List<String[]> list = ExcelKitUtils.instance.getExcelData(uploadFile.getFile());
+        for (String[] strings : list) {
+            if (strings[0] != null && !"".equals(strings[0])) {
+                Order order = new Order();
+                order.set("ordernumber",strings[0]);
+                order.set("ordername",strings[1]);
+              //  order.set("number",strings[3]);
+                order.set("property",strings[5]);
+                order.save();
+            }
+        }
+        FileUtils.instance.deleteFile(filePath);
+        renderJson(new BaseResponse().setCode(1).setMessage("上传成功"));
     }
 }

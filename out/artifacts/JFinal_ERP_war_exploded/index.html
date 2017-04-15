@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <link href="./bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link href="./css/bootstrap-datetimepicker.min.css" rel="stylesheet" media="screen">
+</head>
+
+<body>
+<div class="container">
+    <form action="" class="form-horizontal">
+        <fieldset>
+            <legend>Test</legend>
+
+			<div class="control-group">
+                <label class="control-label">Date Picking</label>
+                <div class="controls input-append date form_date" data-date="" data-date-format="dd MM yyyy" data-link-field="dtp_input2" data-link-format="yyyy-mm-dd">
+                    <input size="16" type="text" value="2017-05-15" readonly>
+                    <span class="add-on"><i class="icon-remove"></i></span>
+					<span class="add-on"><i class="icon-th"></i></span>
+                </div>
+				<input type="hidden" id="dtp_input2" value="" /><br/>
+            </div>
+
+        </fieldset>
+    </form>
+</div>
+<!-- <script type="text/javascript" src="./js/locales/bootstrap-datetimepicker.de.js" charset="UTF-8"></script> -->
+<script type="text/javascript" src="./jquery/jquery-1.8.3.min.js" charset="UTF-8"></script>
+<script type="text/javascript" src="./bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="./js/bootstrap-datetimepicker.js" charset="UTF-8"></script>
+<script type="text/javascript" src="./js/locales/bootstrap-datetimepicker.zh-CN.js" charset="UTF-8"></script>
+<script type="text/javascript">
+// var dates = $('.form_date').datetimepicker.dates = {
+//   en: {
+//     days: ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+//     daysShort: ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
+//     daysMin: ["Su", "Mo", "Tu", "We", "Th", "Fr", "Sa", "Su"],
+//     months: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
+//     monthsShort: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+//     today: "Today",
+//     clear: "Clear"
+//   },
+//   cn: {
+//     days: ["周日", "周一", "周二", "周三", "周四", "周五", "周六", "周日"],
+//     daysShort: ["日", "一", "二", "三", "四", "五", "六", "七"],
+//     daysMin: ["日", "一", "二", "三", "四", "五", "六", "七"],
+//     months: ["一月", "二月", "三月", "四月", "五月", "六月", "七月", "八月", "九月", "十月", "十一月", "十二月"],
+//     monthsShort: ["一月", "二月", "三月", "四月", "五月", "六月", "七月", "八月", "九月", "十月", "十一月", "十二月"],
+//     today: "今天",
+//     clear: "清除"
+//   }
+// };
+	$('.form_date').datetimepicker({
+        language:  'zh-CN',
+        weekStart: 1,
+        todayBtn:  1,
+		autoclose: 1,
+		todayHighlight: 1,
+		startView: 2,
+		minView: 2,
+		forceParse: 0
+    });
+
+</script>
+
+</body>
+</html>

@@ -34,4 +34,8 @@ public class FileUtils {
         file.delete();
         return name;
     }
+    public void deleteFile(String filePath){
+        File file = new File(filePath);
+        file.delete();
+    }
 }

@@ -21,6 +21,8 @@ import com.demo.model.*;
 import com.demo.model.User;
 import com.demo.router.APIRouter;
 import com.demo.controller.*;
+import org.apache.poi.hssf.record.formula.functions.Or;
+
 public class MainConfig extends JFinalConfig {
 
 	@Override
@@ -60,6 +62,7 @@ public class MainConfig extends JFinalConfig {
 		arp.addMapping("user","userid" ,User.class);
 		arp.addMapping("event","eventid",Event.class);
 		arp.addMapping("customer","openid",Customer.class);
+		arp.addMapping("order","ordernumber", Order.class);
 	}
 
 	@Override

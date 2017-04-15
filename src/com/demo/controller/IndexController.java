@@ -39,13 +39,13 @@ public class IndexController extends Controller {
 		int page = getParaToInt("page",1);
 		String sql;
 		int num;
-		String select="SELECT event.ordernumber,event.creattime,event.eventtype,event.customerid,event.eventid,customer.customername ";
+		String select="SELECT event.ordernumber,event.creattime,event.state,event.customerid,event.eventid,customer.customername ";
 		String from = "FROM event,customer WHERE customer.openid=event.customerid";
 		if(seacher==null){
 			sql="";
 		}
 		else if(seacher.matches("[1-9]")){
-			sql="And eventtype = "+seacher;
+			sql="And state = "+seacher;
 		//	String type = Db.findFirst("SELECT * FROM  WHERE equipmenttypeid = ?",Integer.valueOf(seacher).intValue()).getStr("equpimenttypename");
 		//	System.out.println(type);
 			setAttr("type",seacher);

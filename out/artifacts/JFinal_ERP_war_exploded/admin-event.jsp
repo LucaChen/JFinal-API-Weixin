@@ -15,7 +15,9 @@
     <title>微信后台管理系统</title>
 
     <!-- Bootstrap Core CSS -->
-    <link href="/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <%--<link href="/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">--%>
+    <link href="./bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link href="./css/bootstrap-datetimepicker.min.css" rel="stylesheet" media="screen">
     <link href="//cdn.bootcss.com/bootstrap/4.0.0-alpha.2/css/bootstrap.css" rel="stylesheet">
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
     <link href="//cdn.bootcss.com/bootstrap/4.0.0-alpha.2/css/bootstrap.css" rel="stylesheet">
@@ -138,6 +140,24 @@
                                     <option value = 2>已处理</option>
                                 </select>
                             </div>
+                            <div class="container">
+                                <form action="" class="form-horizontal">
+                                    <fieldset>
+                                        <legend>Test</legend>
+
+                                        <div class="control-group">
+                                            <label class="control-label">Date Picking</label>
+                                            <div class="controls input-append date form_date" data-date="" data-date-format="dd MM yyyy" data-link-field="dtp_input2" data-link-format="yyyy-mm-dd">
+                                                <input size="16" type="text" value="2017-05-15" readonly>
+                                                <span class="add-on"><i class="icon-remove"></i></span>
+                                                <span class="add-on"><i class="icon-th"></i></span>
+                                            </div>
+                                            <input type="hidden" id="dtp_input2" value="" /><br/>
+                                        </div>
+
+                                    </fieldset>
+                                </form>
+                            </div>
                             <div  id="2"  style="float: right;margin-top: 5px" >
                                     <input type="text" class="input-medium search-query" name="seachers" id="seachers">
                                     <button type="submit" class="btn" id="seacher">Search</button>
@@ -219,6 +239,23 @@
 
     <!-- Custom Theme JavaScript -->
     <script src="/dist/js/sb-admin-2.js"></script>
+    <script type="text/javascript" src="./jquery/jquery-1.8.3.min.js" charset="UTF-8"></script>
+    <script type="text/javascript" src="./bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="./js/bootstrap-datetimepicker.js" charset="UTF-8"></script>
+    <script type="text/javascript" src="./js/locales/bootstrap-datetimepicker.zh-CN.js" charset="UTF-8"></script>
+    <script type="text/javascript">
+        $('.form_date').datetimepicker({
+            language:  'zh-CN',
+            weekStart: 1,
+            todayBtn:  1,
+            autoclose: 1,
+            todayHighlight: 1,
+            startView: 2,
+            minView: 2,
+            forceParse: 0
+        });
+
+    </script>
 
     <!-- Page-Level Demo Scripts - Tables - Use for reference -->
     <script>
